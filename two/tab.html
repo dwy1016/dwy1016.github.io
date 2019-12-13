@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			[v-cloak] {
+				display: none;
+			}
+			.back{
+				background: #ccc;
+				color: red;
+			}
+			.box{
+				border: 1px solid #ccc;
+			}
+			.top{
+				width: 100%;
+				line-height: 50px;
+				background: #eee;
+                overflow: hidden;
+                display: flex;
+			}
+			.top_{
+				float: left;
+                padding: 0 20px;
+                flex: 1;
+                text-align: center;
+            }
+            .btm{
+                width: 100%;
+                min-height: 400px;
+                line-height: 50px;
+            }
+            .btm:hover{
+                color: cadetblue;
+            }
+		</style>
+	</head>
+
+	<body>
+		<div id="box"  v-cloak="" style="padding: 0 300px;">
+			<c-lee :textarr="arr"></c-lee>
+		
+		</div>	
+		<template id="tab_box">
+			<div>
+				<div class="box">
+					<div class="top">
+						<div v-for="(i,$index) in arr" class="top_" :class="index==$index?'back':''" @mouseover="index=$index">
+							{{i.title}}
+						</div>
+					</div>
+					<div class="btm" v-for="(i,$index) in arr" v-show="index==$index">
+						{{i.text}}
+					</div>
+				</div>
+			</div>
+		</template>
+	</body>
+<script src="vue.js"></script>
+<script>
+	Vue.component('cLee', {
+		template: '#tab_box',
+		props:['textarr'],
+		data(){
+			return {
+				arr:this.textarr,
+				index:0
+			}
+		}
+	})
+	new Vue({
+		el: "#box",
+		data:{
+			arr:[
+				{title:'教育',text:'中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则中国打破了世界软件巨头规则'},
+				{title:'培训',text:'名师教作文：３妙招巧写高分名师教作文：３妙招巧写高分名师教作文：３妙招巧写高分名师教作文：３妙招巧写高分名师教作文：３妙招巧写高分名师教作文：３妙招巧写高分名师教作文：３妙招巧写高分'},
+				{title:'出国',text:'澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会澳大利亚八大名校招生说明会'}
+			]
+		}
+	})
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		[v-cloak]{display: none;}
+	</style>
+</head>
+<body>
+	<div id="box" v-cloak="">
+		<div>
+			<span v-for="(i,$index) in arr" @click="index=$index">
+				{{i.title}}
+			</span>
+		</div>
+		<div>
+			<no1 v-for="(i,$index) in arr" :ddd="i" v-show="index==$index"></no1>
+		</div>
+	</div>
+	<template id="no1">
+		<div>
+			{{json.text}}
+		</div>
+	</template>
+</body>
+<script src="vue.js"></script>
+<script>
+	Vue.component('no1',{
+		template:'#no1',
+		props:['ddd'],
+		data(){
+			return{
+				json:this.ddd
+			}
+		}
+	})
+	new Vue({
+		el:'#box',
+		data:{
+			index:0,
+			arr:[
+				{
+					title:'1',
+					text:'111'
+				},
+				{
+					title:'2',
+					text:'222'
+				},
+				{
+					title:'3',
+					text:'333'
+				}
+			]
+		}
+	})
+</script>
+</html> -->

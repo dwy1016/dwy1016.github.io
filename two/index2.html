@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+</head>
+
+<body>
+	<div id="box">
+		<no1 style="float: left;width: 300px;margin: 10px;" v-for="i in arr" :ddd="i"></no1>
+	</div>
+	<template id="no1">
+		<div style="text-align: center;padding: 20px 10px;">
+			<div :class="json.a" style="font-size: 30px;"></div>
+			<div style="margin: 20px 0;">{{json.b}}</div>
+			<div>
+				{{json.c}}
+			</div>
+		</div>
+	</template>
+</body>
+<script src="vue.js"></script>
+<script>
+	Vue.component('no1', {
+		template: "#no1",
+		props: ['ddd'],
+		data() {
+			return {
+				json: this.ddd
+			}
+		}
+	})
+	new Vue({
+		el: "#box",
+		data: {
+			arr: [{
+					a: 'glyphicon glyphicon-list',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				},
+				{
+					a: 'glyphicon glyphicon-facetime-video',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				},
+				{
+					a: 'glyphicon glyphicon-leaf',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				},
+				{
+					a: 'glyphicon glyphicon-gift',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				}
+			]
+		}
+	})
+</script>
+
+</html>

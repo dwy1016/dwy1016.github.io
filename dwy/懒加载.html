@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: aqua;
+        }
+
+        img {
+            width: 300px;
+            height: 400px;
+            display: block;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-resource.js"></script>
+</head>
+
+<body>
+    <div id="box" v-no1>
+        <img src="" data-url="img/1.jpg">
+        <img src="" data-url="img/2.jpg">
+        <img src="" data-url="img/3.jpg">
+        <img src="" data-url="img/4.jpg">
+        <img src="" data-url="img/5.jpg">
+        <img src="" data-url="img/6.jpg">
+        <img src="" data-url="img/7.jpg">
+        <img src="" data-url="img/1.jpg">
+        <img src="" data-url="img/2.jpg">
+        <img src="" data-url="img/3.jpg">
+        <img src="" data-url="img/4.jpg">
+        <img src="" data-url="img/5.jpg">
+        <img src="" data-url="img/6.jpg">
+        <img src="" data-url="img/7.jpg">
+        <img src="" data-url="img/1.jpg">
+        <img src="" data-url="img/2.jpg">
+        <img src="" data-url="img/3.jpg">
+        <img src="" data-url="img/4.jpg">
+        <img src="" data-url="img/5.jpg">
+        <img src="" data-url="img/6.jpg">
+        <img src="" data-url="img/7.jpg">
+        <img src="" data-url="img/1.jpg">
+        <img src="" data-url="img/2.jpg">
+        <img src="" data-url="img/3.jpg">
+        <img src="" data-url="img/4.jpg">
+        <img src="" data-url="img/5.jpg">
+        <img src="" data-url="img/6.jpg">
+        <img src="" data-url="img/7.jpg">
+        <img src="" data-url="img/1.jpg">
+        <img src="" data-url="img/2.jpg">
+        <img src="" data-url="img/3.jpg">
+        <img src="" data-url="img/4.jpg">
+        <img src="" data-url="img/5.jpg">
+        <img src="" data-url="img/6.jpg">
+        <img src="" data-url="img/7.jpg">
+    </div>
+</body>
+
+</html>
+<script>
+    Vue.directive('no1', {
+        inserted(dom) {
+            loadImg()
+            window.onscroll = function () {
+                loadImg()
+            }
+            function loadImg() {
+                var iH = document.documentElement.clientHeight;
+                var t = document.documentElement.scrollTop || document.body.scrollTop;
+                var img = document.getElementsByTagName("img");
+                for (var i = 0; i < img.length; i++) {
+                    if ((!img[i].bstop) && offsetTop1(img[i]) < (iH + t)) {
+                        var src = img[i].getAttribute("data-url");
+                        img[i].src = src;
+                        img[i].bstop = true;
+                        console.log(1)
+                    }
+                }
+            }
+            function offsetTop1(obj) {
+                var t = obj.offsetTop;
+                while (obj.offsetparent) {
+                    obj = obj.offsetparent;
+                    t = t + obj.offsetTop;
+                }
+                return t;
+            }
+        }
+    })
+    new Vue({
+        el: '#box'
+    })
+</script>

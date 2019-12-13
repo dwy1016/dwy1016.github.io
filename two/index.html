@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box" v-cloak="">
+		<a-lee>
+			<h3 slot="titles">产品介绍</h3>
+			<span slot="iocs">图标</span>
+			<div slot="text">
+				<p>亲，本版本是最简单的单页式模板，不需要创建内页</p>
+				<p>一般来说，只要半天就可以完成对这个模板的设定哦</p>
+				<p>如果您在使用中有什么问题，可以在教程中找到对应的帮助信息哦</p>
+			</div>
+			<div slot="content" style="text-align: center;padding: 20px 0;">
+				<img
+					src="https://ccdn.goodq.top/caches/4a7b7daf436f3e5cb2e29433375ccd5d/aHR0cHM6Ly81NTlhNDQ3YzczMmVlLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTQvMDYvYjU5YzY3YmYxOTZhNDc1ODE5MWU0MmY3NjY3MGNlYmEuanBn.jpg" />
+			</div>
+		</a-lee>
+		<!---->
+		<a-lee>
+			<h3 slot="titles">模板功能</h3>
+			<span slot="iocs">图标</span>
+			<div slot="text">
+				<p>亲，本版本是最简单的单页式模板，不需要创建内页</p>
+				<p>一般来说，只要半天就可以完成对这个模板的设定哦</p>
+				<p>如果您在使用中有什么问题，可以在教程中找到对应的帮助信息哦</p>
+			</div>
+			<div slot="content">
+				<no1 style="float: left;width: 25%;" v-for="i in arr" :ddd="i"></no1>
+			</div>
+		</a-lee>
+		<div style="width: 800px;margin: 0 auto;">
+			<no1 style="float: left;width: 25%;" v-for="i in arr" :ddd="i"></no1>
+		</div>
+
+		<!--<component is="a-lee"></component>-->
+	</div>
+
+	<template id="no1">
+		<div style="text-align: center;padding: 20px 10px;">
+			<div :class="json.a" style="font-size: 30px;"></div>
+			<div style="margin: 20px 0;">{{json.b}}</div>
+			<div>
+				{{json.c}}
+			</div>
+		</div>
+	</template>
+
+	<template id="lee">
+		<div>
+			<div style="text-align: center;">
+				<div>
+					<slot name="titles"></slot>
+				</div>
+				<div style="padding:40px 0;">
+					<span
+						style="display: inline-block;height: 1px;background: #CCCCCC;width: 150px;margin-right:15px ;"></span>
+					<div style="display: inline-block;position: relative;top: 4px;">
+						<slot name="iocs"></slot>
+					</div>
+
+					<span
+						style="display: inline-block;height: 1px;background: #CCCCCC;width: 150px;margin-left:15px ;"></span>
+				</div>
+				<div>
+					<slot name="text"></slot>
+				</div>
+			</div>
+			<div style="min-height: 200px;overflow: hidden;">
+				<slot name="content">
+
+				</slot>
+			</div>
+
+		</div>
+	</template>
+</body>
+<script src="vue.js"></script>
+<script>
+	Vue.component('aLee', {
+		template: '#lee',
+		data() {
+			return {
+				a: 0
+			}
+		},
+
+	})
+	Vue.component('no1', {
+		template: "#no1",
+		props: ['ddd'],
+		data() {
+			return {
+				json: this.ddd
+			}
+		}
+	})
+
+	new Vue({
+		el: '#box',
+		data: {
+			a: 12,
+			arr: [{
+					a: 'glyphicon glyphicon-list',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				},
+				{
+					a: 'glyphicon glyphicon-facetime-video',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				},
+				{
+					a: 'glyphicon glyphicon-leaf',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				},
+				{
+					a: 'glyphicon glyphicon-gift',
+					b: '服 务 介 绍',
+					c: '応损捠捡换攳，攴朰朲朳枛朸桸桹桺奿妀。夲夳夵壱売壳圢圤圥圦圧！圩圪囡団囤囥咍咎，咐咑厺厼厽桻桼忝忞帄帇帉帊峢'
+				}
+			]
+		}
+	})
+</script>
+
+</html>

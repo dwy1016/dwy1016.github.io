@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{display: none;}
+        img{width: 300px;height: 200px;margin-left:20px;}
+        span:hover{color: cadetblue;}
+    </style>
+</head>
+<body>
+    <div id="box" v-cloak="">
+        <div v-for="(i,$index) in arr">
+            <div @click="index=$index" style="display: inline-block;">
+                <span style="display: inline-block;margin: 10px;">{{i.title}}</span>
+            </div>
+            <div>
+                <no1 :data="i" v-show="index==$index"></no1>
+            </div>
+        </div>
+    </div>
+    <template id="no1">
+        <div>
+            <img :src="data.text" alt="">
+        </div>
+
+    </template>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('no1',{
+        template:'#no1',
+        props:['data'],
+        data(){
+            return{
+                data:this.data
+            }
+        }
+    })  
+    new Vue({
+        el:'#box',
+        data:{
+            index:0,
+			arr:[
+				{
+					title:'中国打破了世界软件巨头规则',
+					text:'img/1.jpg'
+				},
+				{
+					title:'名师教作文：３妙招巧写高分',
+					text:'img/2.jpg'
+				},
+				{
+					title:'澳大利亚八大名校招生说明会',
+					text:'img/3.jpg'
+				}
+			]
+        }
+    })
+
+
+</script>
+</html>
