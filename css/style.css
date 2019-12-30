@@ -9,8 +9,8 @@ body {background: #1c1c1c !important; color: #333333;font-size: 15px; font-famil
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- */
-html { -webkit-text-size-adjust: none;}
-.video embed,.video object,.video iframe { width: 100%;  height: auto;}
+html {-webkit-text-size-adjust: none;}
+.video embed,.video object,.video iframe {width: 100%;height: auto;}
 img{max-width:100%;	height: auto;width: auto\9; /* ie8 */}
 
 a{color: #333333;text-decoration: none;-webkit-transition: color 0.3s ease 0s;transition: color 0.3s ease 0s;}
@@ -57,23 +57,16 @@ hr.line { margin: 15px auto; padding: 0; max-width: 90px;border: 0; border-top: 
 	.top-header ul.top-social{float:none !important; text-align: center;}
 }
 
-header{}
 
 .site-header {position: relative;margin-bottom: 45px;z-index:2;background: url(../images/15.jpg) no-repeat;background-position: 0 0;background-attachment: fixed;background-size: cover;}
 .site-branding {padding-top: 120px;text-align: center;}
-.site-logo{}
 .overlay {position: absolute;height: 100%;width: 100%;top: 0;background-color: #000;opacity: 0.4;z-index: -1;}
 /* ---------------------------------------------------------------------------- */
 /* -------------------------------------Content-------------------------------- */
-/* ---------------------------------------------------------------------------- */
-#page-content{}
-#page-content.index-page {}
 #page-content.sub-page {padding: 30px 0;}
 
 /* ---HomePage--- */
 .box-content {padding: 50px 0;}
-
-.box-content.box-5 {}
 .box-content.box-5 .box-item{background-color: #fff;margin: 0 auto 30px;max-width: 500px;} 
 .box-content.box-5 .box-item .content{padding: 10px 30px 30px;} 
 .box-content.box-5 .box-item img {width: 100%;}
@@ -116,7 +109,6 @@ footer .copyright {padding: 25px 0;}
 /* ---------------------------------------------------------------------------- */
 /* -------------------------------------Comment-------------------------------- */
 /* ---------------------------------------------------------------------------- */
-.comment-respond {}
 .comments-title {margin: 0;font-size: 24px;padding: 30px;border-bottom: 1px solid #ebebeb;background-color: #fff;color: #fff;}
  
 #comment .sendButton {cursor:pointer;background-color:transparent;border: 2px solid #fff;border-radius: 0;-webkit-transition: all .2s ease-in-out;transition: all .2s ease-in-out;width:20%;color:#ffffff;margin-top:40px;}
@@ -149,7 +141,6 @@ svg {position: absolute;top: 0;left: 0;}
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------------Btn---------------------------------- */
 /* ---------------------------------------------------------------------------- */
-.btn{}
 
 a.btn-1 {color:#fff;border: 2px solid #fff;border-radius: 0;
 -webkit-transition: all .2s ease-in-out;
