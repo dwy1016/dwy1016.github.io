@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>设计公司网站模板</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<div id="box">
+			<div class="g-header">
+				<img src="https://ccdn.goodq.top/caches/85e9413af2fb7f593b2c9e26f027fb64/aHR0cHM6Ly81ZDZjYWM5NThlNzFmLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDgvNjY5ZTBhOWMxMjE0ODI4YTcwZWFiOWUyYjM5NTkyMDAucG5n.png"
+				 alt="">
+			</div>
+			<p class="h3">作品合集</p>
+			<div class="header_nav">
+				<div class="header_left">
+					<p>
+						这里展示了此网站所有作品，
+						更多信息请点击查看更多按钮。</p>
+				</div>
+				<div class="header_right">
+					<ul>
+						<li class="li">所有</li>
+						<li>服装</li>
+						<li>家具</li>
+						<li>商标</li>
+						<li>印刷</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content">
+				<mon1></mon1>
+			</div>
+			<div class="footer">
+				<mon2></mon2>
+				<!-- <div style="float:left;">
+				<img src="https://ccdn.goodq.top/caches/85e9413af2fb7f593b2c9e26f027fb64/aHR0cHM6Ly81ZDZjYWM5NThlNzFmLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDgvNjY5ZTBhOWMxMjE0ODI4YTcwZWFiOWUyYjM5NTkyMDAtMjV4MzAucG5n.png" alt="">
+				<span>地址：苏州市金鸡湖大道00号
+©版权所有2019模板网站 | 沪ICP备0000000000-号</span>
+			</div> -->
+			</div>
+		</div>
+		<template id="mon1">
+			<div>
+				<div v-for="i in arr" style="width:370px;height:400px;float:left;margin-right:20px;">
+					<img @mouseover="btn" :src="i.a" alt="" style="width:361pz;height:300px;cursor: pointer;">
+					<p class="mon1_text">{{i.b}}</p>
+					<span class="mon1_size">{{i.c}}</span>
+				</div>
+			</div>
+		</template>
+		<template id="mon2">
+			<div>
+				<div v-for="i in arr" style="float:left;width:260px;margin-right: 30px;">
+					<p class="mon2_text">{{i.a}}</p>
+					<span class="mon2_size">{{i.b}}</span>
+				</div>
+			</div>
+		</template>
+	</body>
+	<script src="vue.js"></script>
+	<script src="index.js"></script>
+</html>
+

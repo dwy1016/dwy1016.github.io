@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击</title>
+    <style>
+         .v-enter,.v-leave-to{
+             opacity: 0;
+            transform: translateX(100px);
+             color:red;
+         }
+        .v-enter-active,.v-leave-active{
+            transition:all 1s linear;
+
+        }
+        .my-enter,.my-leave-to{
+            opacity: 0;
+            transform: translateY(200px);
+            color:blue;
+        }
+        .my-enter-active,.my-leave-active{
+            transition:all 1s linear;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="no1">
+        <button @click="type=!type">点点点</button>
+      <transition>
+        <h1 v-if="type">董婉颖来了~~~~~~~</h1>
+      </transition>
+       <transition name="my">
+        <h1 v-if="!type">又走了</h1>
+      </transition>
+</div>
+    
+</body>
+<script src="vue.js"></script>
+<script>
+     new Vue({
+            el: "#no1",
+            data: {
+                type:false
+    
+            },
+            methods: {}
+        })
+
+</script>
+</html>
