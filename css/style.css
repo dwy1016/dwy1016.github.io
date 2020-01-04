@@ -69,7 +69,7 @@ hr.line { margin: 15px auto; padding: 0; max-width: 90px;border: 0; border-top: 
 .box-content {padding: 50px 0;}
 .box-content.box-5 .box-item{background-color: #fff;margin: 0 auto 30px;max-width: 500px;} 
 .box-content.box-5 .box-item .content{padding: 10px 30px 30px;} 
-.box-content.box-5 .box-item img {width: 100%;height: 300px;}
+.box-content.box-5 .box-item img {width: 100%;height: 300px !important;}
 .box-content.box-5 .box-item .content h3.entry-title{font-size: 22px;margin-bottom: 10px;}
 .box-content.box-5 .box-item .content h3.entry-title a{color:#111;} 
 .box-content.box-5 .box-item .content h3.entry-title a:hover{color:#23B6B6;} 
